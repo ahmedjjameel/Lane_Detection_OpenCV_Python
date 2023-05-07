@@ -48,6 +48,20 @@ We're interested in the area facing the camera, where the lane lines are found. 
 
 ### 5. Hough Transform
 The Hough transform is a technique which can be used to isolate features of a particular shape within an image.
+In the Cartesian coordinate system, we can represent a straight line as y = mx + b by plotting y against x. However, we can also represent this line as a single point in Hough space by plotting b against m. For example, a line with the equation y = 2x + 1 may be represented as (2, 1) in Hough space.
+ 
+Now, what if instead of a line, we had to plot a point in the Cartesian coordinate system. There are many possible lines which can pass through this point, each line with different values for parameters m and b. For example, a point at (2, 12) can be passed by y = 2x + 8, y = 3x + 6, y = 4x + 4, y = 5x + 2, y = 6x, and so on. These possible lines can be plotted in Hough space as (2, 8), (3, 6), (4, 4), (5, 2), (6, 0). Notice that this produces a line of m against b coordinates in Hough space.
+ 
+Whenever we see a series of points in a Cartesian coordinate system and know that these points are connected by some line, we can find the equation of that line by first plotting each point in the Cartesian coordinate system to the corresponding line in Hough space, then finding the point of intersection in Hough space. The point of intersection in Hough space represents the m and b values that pass consistently through all of the points in the series.
+ 
+Since our frame passed through the Canny Detector may be interpreted simply as a series of white points representing the edges in our image space, we can apply the same technique to identify which of these points are connected to the same line, and if they are connected, what its equation is so that we can plot this line on our frame.
+For the simplicity of explanation, we used Cartesian coordinates to correspond to Hough space. However, there is one mathematical flaw with this approach: When the line is vertical, the gradient is infinity and cannot be represented in Hough space. To solve this problem, we will use Polar coordinates instead. The process is still the same just that other than plotting m against b in Hough space, we will be plotting r against θ.
+ 
+For example, for the points on the Polar coordinate system with x = 8 and y = 6, x = 4 and y = 9, x = 12 and y = 3, we can plot the corresponding Hough space.
+ 
+We see that the lines in Hough space intersect at θ = 0.925 and r = 9.6. Since a line in the Polar coordinate system is given by r = xcosθ + ysinθ, we can induce that a single line crossing through all these points is defined as 9.6 = xcos0.925 + ysin0.925.
+Generally, the more curves intersecting in Hough space means that the line represented by that intersection corresponds to more points. For our implementation, we will define a minimum threshold number of intersections in Hough space to detect a line. Therefore, Hough transform basically keeps track of the Hough space intersections of every point in the frame. If the number of intersections exceeds a defined threshold, we identify a line with the corresponding θ and r parameters.
+We apply Hough Transform to identify two straight lines — which will be our left and right lane boundaries
 
 
 
