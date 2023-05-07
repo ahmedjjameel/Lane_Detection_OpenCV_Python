@@ -17,3 +17,10 @@ Lane detection is a developing technology that is implemented in vehicles to ena
 6.	Average and extrapolating the lane lines.
 7.	Apply on video streams.
 
+### Dependencies:
+1.	Python 3.7.5
+2.	NumPy 1.18.5
+3.	OpenCV-Python 4.7.0.72
+4.	Matplotlib 4.4.0
+5.	Pickle5 0.0.12
+
