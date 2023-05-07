@@ -1,1 +1,5 @@
-# Lane_Detection_OpenCV_Python
+## Lane Detection using OpenCV and Python
+
+### Overview
+
+Detect lanes using computer vision techniques. 
