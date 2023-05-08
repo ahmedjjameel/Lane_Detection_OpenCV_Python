@@ -37,6 +37,8 @@ A group of test images will be shown using a function called list_images() that 
 ### 2. Color Selection:
 Lane lines in the test images are in white and yellow. We need to choose the most suitable color space, that clearly highlights the lane lines. I applied color selection to the original RGB images, HSV images, and HSL images, and found out that using HSL will be the best color space to use.
 
+![colorselect1](https://user-images.githubusercontent.com/81799459/236746496-fde89020-1467-49fb-aba6-a2b5f138248b.png)  |   ![colorselect2](https://user-images.githubusercontent.com/81799459/236746508-6556e41a-6f98-4fb5-841a-4f70f28493d9.png)
+:-------------------------:|:-------------------------:
 
 ### 3. Canny Edge Detection
 We need to detect edges in the images to be able to correctly detect lane lines. The Canny edge detector is an edge detection operator that uses a multi-stage algorithm to detect a wide range of edges in images. The Canny algorithm involves the following steps:
