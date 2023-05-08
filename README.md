@@ -49,6 +49,10 @@ We need to detect edges in the images to be able to correctly detect lane lines.
 -	Apply double threshold to determine potential edges.
 -	Track edge by hysteresis: Finalize the detection of edges by suppressing all the other edges that are weak and not connected to strong edges. If an edge pixel’s gradient value is higher than the high threshold value, it is marked as a strong edge pixel. If an edge pixel’s gradient value is smaller than the high threshold value and larger than the low threshold value, it is marked as a weak edge pixel. If an edge pixel's value is smaller than the low threshold value, it will be suppressed. The two threshold values are empirically determined and their definition will depend on the content of a given input image.
 
+![edgedetect1](https://user-images.githubusercontent.com/81799459/236747466-65ad0522-139d-475e-9a01-47931ae0d870.png)  |  ![edgedetect2](https://user-images.githubusercontent.com/81799459/236747482-58489a2d-c62c-4cbd-8a31-f826a0451ac9.png)
+:-------------------------:|:-------------------------:
+
+
 
 ### 4. Region of interest
 We're interested in the area facing the camera, where the lane lines are found. So, we'll apply region masking to cut out everything else.
