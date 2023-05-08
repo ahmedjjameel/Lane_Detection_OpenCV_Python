@@ -82,6 +82,7 @@ We have multiple lines detected for each lane line. We need to average all these
 Now, we'll use the above functions to detect lane lines from a video stream. The video inputs are in test_videos folder. The video outputs are generated in output_videos folder.
 
 
+![solidWhiteRight_output](https://user-images.githubusercontent.com/81799459/236751038-1f9ec102-9c7d-4d43-83bf-e0ab85c52faa.gif)
 
 
 
