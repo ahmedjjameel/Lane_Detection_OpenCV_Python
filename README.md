@@ -9,6 +9,7 @@ It is well known that lane recognition on freeways is an essential part of any s
 
 ![solidWhiteRight](https://user-images.githubusercontent.com/81799459/236739560-a84de16e-98f0-4146-9a94-bd5935d847b0.gif)  |  ![solidWhiteRight_output](https://user-images.githubusercontent.com/81799459/236697500-a4190b06-e3ce-4cdc-b203-fe8d0b845725.gif)
 :-------------------------:|:-------------------------:
+
 ### Pipeline architecture:
 1.	Load test images.
 2.	Apply Color Selection
@@ -68,12 +69,14 @@ A Hough transform is used in the end to get the two lanes out of the image of ed
 Observing the curves produced in the Hough space will show that there are two major clusters of points of intersection in the Hough space, representing all the lines that comprise the two major lanes on either side of the road. These lines have been plotted onto the original image as illustrated in Fig. 1. 
 The image shows many lines on the left lane and on the right. Each of these groups needs to be considered separately, but the number of lines must be reduced to one each. This can be achieved by taking the average of each set of Hough lines produced. This leaves a final image as illustrated in Fig. 2 that considers the average length and direction of each line. These lines may be extrapolated to account for areas of the road where there are no lanes. 
 
-![Fig  1](https://user-images.githubusercontent.com/81799459/236732759-c958fc28-8342-4391-9e5f-8889ade81111.png)   |   ![Fig  2](https://user-images.githubusercontent.com/81799459/236732765-34b88466-e6c0-4be6-9e09-2690b3ab8525.png)
+![HT-1](https://user-images.githubusercontent.com/81799459/236749322-69054a87-dfa4-4a76-8e22-f72832f6f029.png)  |  ![HT-2](https://user-images.githubusercontent.com/81799459/236749336-e64ad65b-a4e6-4f6b-9f5f-468f279815e4.png)
 :-------------------------:|:-------------------------:
 
 ### 6. Averaging and extrapolating the lane lines
 We have multiple lines detected for each lane line. We need to average all these lines and draw a single line for each lane line. We also need to extrapolate the lane lines to cover the full lane line length.
 
+![avg1](https://user-images.githubusercontent.com/81799459/236750337-3cc59c73-96e4-404d-84cc-9c0d9c69f6b4.png)  |   ![avg2](https://user-images.githubusercontent.com/81799459/236750350-99e77e37-7cea-4aca-9b00-8a52c4b51920.png)
+:-------------------------:|:-------------------------:
 
 ### 7. Apply on video streams
 Now, we'll use the above functions to detect lane lines from a video stream. The video inputs are in test_videos folder. The video outputs are generated in output_videos folder.
