@@ -31,6 +31,9 @@ It is well known that lane recognition on freeways is an essential part of any s
 ### 1. Loading test images:
 A group of test images will be shown using a function called list_images() that shows all the test images using matplotlib.
 
+![02  solidWhiteRight](https://user-images.githubusercontent.com/81799459/236745352-8b92cdf7-2c05-44a5-92c8-2989ea42a8a0.jpg)  |  ![04  solidYellowCurve2](https://user-images.githubusercontent.com/81799459/236745363-649b5f15-6da7-43c0-9f63-71e56e6b9471.jpg)
+:-------------------------:|:-------------------------:
+
 ### 2. Color Selection:
 Lane lines in the test images are in white and yellow. We need to choose the most suitable color space, that clearly highlights the lane lines. I applied color selection to the original RGB images, HSV images, and HSL images, and found out that using HSL will be the best color space to use.
 
