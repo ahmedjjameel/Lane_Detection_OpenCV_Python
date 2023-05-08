@@ -52,11 +52,11 @@ We need to detect edges in the images to be able to correctly detect lane lines.
 ![edgedetect1](https://user-images.githubusercontent.com/81799459/236747466-65ad0522-139d-475e-9a01-47931ae0d870.png)  |  ![edgedetect2](https://user-images.githubusercontent.com/81799459/236747482-58489a2d-c62c-4cbd-8a31-f826a0451ac9.png)
 :-------------------------:|:-------------------------:
 
-
-
 ### 4. Region of interest
 We're interested in the area facing the camera, where the lane lines are found. So, we'll apply region masking to cut out everything else.
 
+![ROI-1](https://user-images.githubusercontent.com/81799459/236748334-d8302e27-54a0-4425-b1a8-91dfd961147d.jpg)  |   ![ROI-2](https://user-images.githubusercontent.com/81799459/236748344-fd3b8744-6ce0-4c6d-8de6-d051ee8a7762.jpg)
+:-------------------------:|:-------------------------:
 
 
 ### 5. Hough Transform
